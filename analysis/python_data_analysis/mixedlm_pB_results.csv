@@ -1,0 +1,13 @@
+outcome,term,coef,std_err,z,p_value,ci_lower,ci_upper,logLik,group_var,n_obs,n_groups
+eng,Intercept,3.732,0.196,19.014,0.0,3.347,4.116,-51.814,0.466,57,19
+eng,C(role)[T.ask],-0.021,0.133,-0.16,0.873,-0.282,0.239,-51.814,0.466,57,19
+eng,"C(prototype, Treatment(reference='B'))[T.A]",-0.172,0.129,-1.338,0.181,-0.424,0.08,-51.814,0.466,57,19
+eng,"C(prototype, Treatment(reference='B'))[T.C]",0.105,0.127,0.829,0.407,-0.144,0.354,-51.814,0.466,57,19
+trust,Intercept,4.073,0.21,19.395,0.0,3.661,4.485,-57.604,0.483,57,19
+trust,C(role)[T.ask],0.101,0.153,0.661,0.508,-0.198,0.401,-57.604,0.483,57,19
+trust,"C(prototype, Treatment(reference='B'))[T.A]",0.116,0.149,0.775,0.438,-0.177,0.408,-57.604,0.483,57,19
+trust,"C(prototype, Treatment(reference='B'))[T.C]",-0.079,0.147,-0.536,0.592,-0.368,0.21,-57.604,0.483,57,19
+open,Intercept,3.936,0.202,19.493,0.0,3.54,4.332,-53.458,0.491,57,19
+open,C(role)[T.ask],0.156,0.137,1.134,0.257,-0.113,0.425,-53.458,0.491,57,19
+open,"C(prototype, Treatment(reference='B'))[T.A]",0.002,0.133,0.013,0.989,-0.259,0.262,-53.458,0.491,57,19
+open,"C(prototype, Treatment(reference='B'))[T.C]",0.0,0.131,0.0,1.0,-0.257,0.257,-53.458,0.491,57,19
