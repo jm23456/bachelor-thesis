@@ -1,0 +1,1909 @@
+/* RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #FEFEFF;
+  --bg-secondary: #FEFEFF;
+  --bg-card: #FEFEFF;
+  --text-primary: #1a1a1a;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Proportionale Skalierung basierend auf Viewport */
+html {
+  /* Basis-Skalierung: 16px bei 1000px Viewport-Breite */
+  font-size: clamp(12px, 1.6vw, 18px);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: var(--bg-primary);
+  box-shadow:
+  0 40px 100px rgba(120, 90, 200, 0.18);
+  color: var(--text-primary);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ROOT CONTAINER */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  background: #FEFEFF;
+}
+
+
+/* MAIN CARD – themed background */
+.app-card {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 100vh;
+  padding: 0px 30px;
+  background: var(--bg-card);
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+/* TYPOGRAPHY */
+.screen-header h1 {
+  font-size: 40px;
+  margin: 0;
+  font-weight: 800;
+  text-align: center;
+}
+
+.screen-header h2 {
+  font-size: 20px;
+  margin: 20px 0 10px 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 42px;
+  text-align: center;
+  font-weight: 700;
+  color: #5e35b1;
+  margin-bottom: 10px;
+}
+
+.intro-text{
+  font-size: 18px;
+  text-align: center;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.subtitleArgu {
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700;
+  color: #5b21b6;
+}
+
+.current-speaker {
+  font-size: 16px;
+  text-align: center;
+  color: #4b5563;
+  margin-top: 10px;
+}
+
+/* LAYOUT */
+.screen {
+  width: 100%;
+  background: #FEFEFF;
+  margin: 32px auto;
+  
+}
+
+.screen-body {
+  margin-top: 20px;
+}
+
+.role-title {
+  font-size: 1rem;     
+  font-weight: 600;      
+  color: rgba(0, 0, 0, 0.75);          
+  margin-bottom: 20px;   
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 40px 0;
+}
+
+
+/* BUTTON SECOND VERSION & Next, Continue buttons */
+
+.con-primary-btn,
+.con-secondary-btn {
+  border-radius: 12px;
+  padding: 14px 0px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: #785fc2;
+  color: white;
+  width: 250px;
+  min-width: 180px;
+  max-width: 280px;
+  min-height: 46px;
+  margin: 10px auto;
+  display: block;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+}
+
+.con-primary-btn:disabled {
+  background: #d9dce0;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.con-primary-btn:hover {
+  background: #5e35b1;
+}
+  
+/* BUTTON FIRST VERSION & TOPIC BUTTONS*/
+.primary-btn,
+.secondary-btn {
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #d0d1d6;
+  color: #1a1a1a;
+  width: 270px;
+  min-width: 180px;
+  max-width: 300px;
+  min-height: 42px;
+  display: block;
+  margin: 5px auto;
+  transition: 0.15s ease;
+  box-sizing: border-box;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  background: #d9dce5;
+}
+  
+
+.primary-btn:active,
+.secondary-btn:active {
+  background: #caced8;
+}
+
+.primary-btn:disabled {
+  background: #e5e8f0;
+  color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.primary-btn:disabled:hover {
+  background: #e5e8f0;
+}
+/* TEXT INPUT */
+.text-input {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: 1px solid #cfd3dc;
+  background: #ffffff;
+  color: #1a1a1a;
+  outline: none;
+  transition: 0.1s ease;
+}
+
+.text-input:focus {
+  border-color: #5b21b6;
+  box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.15);
+}
+
+/* BUTTON GRID (topic selection buttons) */
+.button-grid {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-grid-horizontal {
+  display: flex;
+  gap: 22px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.topic-btn {
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.75);
+  transition: 0.15s ease;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  height: 46px;
+}
+
+.topic-btn:hover {
+  background: #f3f4f6;
+}
+
+.topic-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.topic-btn-active {
+  background: #EEF2FF !important;
+  box-shadow: 0 0 0 2px #6366F1 !important;
+}
+
+.topic-btn-active:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 2px #EEF2FF;
+  outline: none;
+}
+
+.primary-btn.outline {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  transition: 0.15s ease;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.75)
+}
+
+.primary-btn.outline:hover {
+  background: #f3f4f6;
+  border: 1px solid #d0d3d6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn.outline:active {
+  background: #f3f4f6;
+  transform: scale(0.98);
+}
+
+.primary-btn-active {
+  background: #EEF2FF !important;
+  box-shadow: 0 0 0 2px #6366F1!important;
+}
+
+.primary-btn-active:hover {
+  background: #EEF2FF !important;
+  box-shadow: 0 0 0 2px #6366F1 !important;
+  transform: none;
+}
+
+.primary-btn-active:focus {
+  border-color: #5b21b6;
+  box-shadow: 0 0 0 2px #EEF2FF;
+  outline: none;
+}
+
+/* REMOVE DARK CHAT WINDOW STYLING (until later) */
+.debate-messages {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.message-bubble {
+  background: #f3f4f6;
+  border-radius: 12px;
+}
+
+/* CENTERED TITLE SPACING */
+.screen-header {
+  margin-bottom: 50px;
+}
+
+/* HEADER ROW - Exit button top right */
+.screen-header.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.screen-header.header-row .exit-btn {
+  flex-shrink: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 720px) {
+  .app-card {
+    padding: 40px 20px;
+  }
+
+  .screen-header h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 32px;
+  }
+}
+
+/* CUSTOM TOPIC INPUT WITH SEND BUTTON */
+.custom-topic-row {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.custom-topic-row .text-input {
+  width: 100%;
+  padding-right: 80px;
+  height: 46px;
+}
+
+.custom-topic-row .text-input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.custom-topic-row .text-input:focus {
+  border-color: #5b21b6;
+  box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.15);
+  outline: none;
+}
+
+.custom-topic-row .text-input.confirmed {
+  background: #ede9fe !important;
+  box-shadow: 0 0 0 2px #7c3aed !important;
+  border-radius: 16px;
+}
+
+.custom-topic-row .send-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #e5e8f0;
+  color: #9ca3af;
+  width: auto;
+  margin: 0;
+  display: inline-block;
+  transition: 0.15s ease;
+}
+
+.custom-topic-row .send-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.custom-topic-row .send-btn.active {
+  background: #5b21b6;
+  color: #ffffff;
+}
+
+.custom-topic-row .send-btn:focus {
+  border-color: #5b21b6;
+  box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.15);
+  outline: none;
+}
+
+.custom-topic-row .send-btn.active:hover {
+  background: #4c1d95;
+}
+
+/* EXIT BUTTON - Red styling */
+.exit-btn {
+  border-radius: 10px;
+  padding: 4px 14px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #D32F2F;
+  color: #ffffff;
+  width: auto;
+  margin: 0;
+  display: inline-block;
+  transition: 0.15s ease;
+}
+
+.exit-btn:hover {
+  background: #e24343;
+  color: #991b1b;
+}
+
+/* MUTE BUTTON */
+.mute-btn {
+  border-radius: 10px;
+  padding: 4px 12px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #e5e7eb;
+  width: auto;
+  margin: 0;
+  display: inline-block;
+  transition: 0.15s ease;
+}
+
+.mute-btn:hover {
+  background: #d1d5db;
+}
+
+/* TOP EXIT ROW - Timer left, Exit button right */
+.top-exit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* When no timer, push exit button to right */
+.top-exit-row:not(:has(.timer-display)) {
+  justify-content: flex-end;
+}
+
+
+.end-round-btn {
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  background: #5b21b6;
+  color: #ffffff;
+  width: auto;
+  margin: 0;
+  display: inline-block;
+  transition: 0.15s ease;
+}
+
+.end-round-btn:hover {
+  background: #4c1d95;
+}
+
+/* TIMER DISPLAY - Stopwatch style */
+.timer-display {
+  display: inline-flex;                                                                                                                                                                                                                                                                                                                                                                 
+  align-items: center;
+  gap: 8px;
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 16px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.timer-display::before {
+  content: "⏱";
+  font-size: 25px;
+}
+
+/* DEBATE SCREEN - Argument boxes and stage */
+.debate-arguments {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: 350px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar styling */
+.debate-arguments::-webkit-scrollbar {
+  width: 8px;
+}
+
+.debate-arguments::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.debate-arguments::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.debate-arguments::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+.argument-box {
+  padding: 14px 20px;
+  border-radius: 16px;
+  min-height: 60px;
+  width: 90%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  animation: fadeInUp 0.4s ease;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Intro-Nachrichten: kleiner und mit Label */
+.argument-box.argument-intro {
+  padding: 8px 14px;
+  min-height: 40px;
+  font-size: 11px;
+  opacity: 0.85;
+  width: 85%;
+}
+
+/* Intro-Bubbles Ausrichtung: Yellow/Red links, Gray/Blue/Green rechts */
+.argument-intro.argument-yellow,
+.argument-intro.argument-red {
+  align-self: flex-start !important;
+  margin-right: auto !important;
+  margin-left: 20px !important;
+}
+
+.argument-intro.argument-gray,
+.argument-intro.argument-blue,
+.argument-intro.argument-green {
+  align-self: flex-end !important;
+  margin-left: auto !important;
+  margin-right: 20px !important;
+}
+
+.intro-label {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #6b7280;
+  color: white;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Report Button für Warnungen */
+.report-btn {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  opacity: 0.4;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.report-btn:hover {
+  opacity: 1;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+/* Sprechblasen-Pfeil für links (yellow, red) */
+.argument-yellow::before,
+.argument-red::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.argument-yellow::before {
+  border-right-color: #f59e0b;
+}
+
+.argument-red::before {
+  border-right-color: #ef4444;
+}
+
+
+/* Sprechblasen-Pfeil für rechts (gray, blue, green) */
+.argument-gray::before,
+.argument-blue::before,
+.argument-green::before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.argument-gray::before {
+  border-left-color: #6b7280;
+}
+
+.argument-blue::before {
+  border-left-color: #3b82f6;
+}
+
+.argument-green::before {
+  border-left-color: #10b981;
+}
+
+/* Bubbles links ausrichten (Yellow, Red) */
+.argument-yellow,
+.argument-red {
+  align-self: flex-start;
+  margin-right: auto;
+  max-width: 95%;
+}
+
+/* Bubbles rechts ausrichten (Gray, Blue, Green) */
+.argument-gray,
+.argument-blue,
+.argument-green {
+  align-self: flex-end;
+  margin-left: auto;
+  max-width: 95%;
+}
+
+/* User Bubbles zentriert */
+.argument-user {
+  align-self: center;
+  max-width: 100%;
+}
+
+.argument-pro {
+  background: #fef9c3;
+  border: 1px solid #fef08a;
+}
+
+.argument-pro .argument-label {
+  margin-left: auto;
+}
+
+.argument-contra {
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+}
+
+.argument-user {
+  background: #dbeafe;
+  border: 3px solid #bfdbfe;
+}
+
+/* User-Intro: gleiche Schriftstärke wie Bot-Nachrichten */
+.argument-user.argument-intro {
+  font-weight: 600;
+}
+
+.argument-user.argument-intro .argument-text {
+  font-weight: 600;
+}
+
+/* Intro-Label für User-Nachrichten */
+.argument-user.argument-intro .intro-label {
+  background: #3b82f6;
+}
+
+/* Argument Bubbles mit Chatbot-Farben */
+.argument-blue {
+  background: #dbeafe;
+  border: 2px solid #3b82f6;
+  border-left: 5px solid #3b82f6;
+}
+
+.argument-gray {
+  background: #e5e7eb;
+  border: 2px solid #6b7280;
+  border-left: 5px solid #6b7280;
+}
+
+.argument-green {
+  background: #d1fae5;
+  border: 2px solid #10b981;
+  border-left: 5px solid #10b981;
+}
+
+.argument-yellow {
+  background: #fef3c7;
+  border: 2px solid #f59e0b;
+  border-left: 5px solid #f59e0b;
+}
+
+.argument-red {
+  background: #fee2e2;
+  border: 2px solid #ef4444;
+  border-left: 5px solid #ef4444;
+}
+
+.argument-label {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* Intro-Nachrichten: kleinere Schrift */
+.argument-intro .argument-label,
+.argument-intro .argument-text {
+  font-size: 12px;
+}
+
+.argument-text {
+  font-size: 16px;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* Typing Indicator Animation */
+.typing-indicator {
+  padding: 12px 20px;
+}
+
+.typing-dots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-dots .dot {
+  width: 8px;
+  height: 8px;
+  background: #6b7280;
+  border-radius: 50%;
+  animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+/* Typing Dots Farben für jeden Chatbot */
+.argument-blue .typing-dots .dot {
+  background: #3b82f6;
+}
+
+.argument-gray .typing-dots .dot {
+  background: #6b7280;
+}
+
+.argument-green .typing-dots .dot {
+  background: #10b981;
+}
+
+.argument-yellow .typing-dots .dot {
+  background: #f59e0b;
+}
+
+.argument-red .typing-dots .dot {
+  background: #ef4444;
+}
+
+.typing-dots .dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-dots .dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+.typing-dots .dot:nth-child(3) {
+  animation-delay: 0s;
+}
+
+@keyframes typing-bounce {
+  0%, 80%, 100% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Blinkender Cursor für Typewriter-Effekt */
+.cursor {
+  animation: blink 1s infinite;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.debate-stage {
+  border-radius: 24px;
+  background: 
+      radial-gradient(
+        circle at center,
+        rgba(255,255,255,0.9) 0%,
+        rgba(255,255,255,0.6) 30%,
+        rgba(255,255,255,0.0) 60%
+      ),
+      linear-gradient(
+        90deg,
+        #eaf6f1 0%,
+        #f7f9fc 50%,
+        #e9f1fb 100%
+      );
+  margin-top: 10px;
+  margin-bottom: 0px;
+  width: 100%;
+  margin: 0 auto;
+  transform-origin: center top;
+  opacity: 0.85;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-end-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Active Arguments Intro Screen */
+.active-arguments-stage {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.intro-stage {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 60px;
+  margin-top: 10px;
+  transform: scale(1.4);
+  transform-origin: center center;
+  padding: 20px 0;
+}
+
+.side-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.candidates-row {
+  display: flex;
+  gap: 130px;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ARGUMENTS STAGE - Unified layout */
+.arguments-stage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 500px;
+  gap: 130px;
+  margin-top: 0px;
+  padding: 20px;
+}
+
+.bubble-label{
+  white-space: pre-line;
+}
+
+.candidates-row-unified {
+  display: flex;
+  gap: 100px;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.introcandidates-row-left {
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+  justify-content: right;
+  width: 500px;
+}
+
+.introcandidates-row-center {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.introcandidates-row-right {
+  display: flex;
+  gap: 60px;
+  align-items: flex-end;
+  justify-content: left;
+  width: 500px;
+}
+
+
+/* CANDIDATE CARD */
+.candidate-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  /* Slower transition when returning to normal state */
+  transition: transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              filter 0.8s cubic-bezier(0.25, 0.1, 0.25, 1), 
+              z-index 0s 0.4s;
+  transform-origin: bottom center;
+}
+
+/* Speaking/Focus effect - like camera focusing on speaker */
+.candidate-card.speaking {
+  transform: scale(1.15);
+  z-index: 20;
+  filter: brightness(1.05);
+  /* Faster transition when becoming the speaker */
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              filter 0.5s ease-out, 
+              z-index 0s;
+}
+
+/* Dim ALL non-speaking candidates when someone is speaking */
+.arguments-stage:has(.speaking) .candidate-card:not(.speaking),
+.intro-stage:has(.speaking) .candidate-card:not(.speaking),
+.debate-stage:has(.speaking) .candidate-card:not(.speaking),
+.active-debate-stage:has(.speaking) .candidate-card:not(.speaking) {
+  filter: brightness(0.75) saturate(0.85);
+  transform: scale(0.92);
+}
+
+/* Breitere Speech Bubbles beim Sprechen - nur in Debate Screens */
+.debate-stage .candidate-card.speaking .candidate-speech-bubble,
+.active-debate-stage .candidate-card.speaking .candidate-speech-bubble {
+  width: 300px;
+  max-height: 320px;
+  transition: width 0.4s ease, max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.candidate-speech-bubble {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 25px;
+  width: 165px;
+  min-height: 80px;
+  max-height: 220px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 6px;
+  padding-right: 0px;
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  z-index: 10;
+  transition: width 0.4s ease, max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  overflow-y: auto;
+  word-wrap: break-word;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar immer sichtbar */
+.candidate-speech-bubble::-webkit-scrollbar {
+  width: 6px;
+}
+
+.candidate-speech-bubble::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.candidate-speech-bubble::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.candidate-speech-bubble::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.candidate-speech-bubble.fade-out {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-30px);
+}
+
+.candidate-speech-bubble::after {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: inherit;
+}
+
+.candidate-blue .candidate-speech-bubble {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+}
+
+.candidate-blue .candidate-speech-bubble::after {
+  border-top-color: #eff6ff;
+}
+
+.candidate-gray .candidate-speech-bubble {
+  background: #e5e7eb;
+  border: 1px solid #e5e7eb;
+}
+
+.candidate-gray .candidate-speech-bubble::after {
+  border-top-color: #f3f4f6;
+}
+
+.candidate-green .candidate-speech-bubble {
+  background: #dcfce7;
+  border: 1px solid #dcfce7;
+}
+
+.candidate-green .candidate-speech-bubble::after {
+  border-top-color: #f0fdf4;
+}
+
+.candidate-yellow .candidate-speech-bubble {
+  background: #fef3c7;
+  border: 1px solid #fef9c3;
+}
+
+.candidate-yellow .candidate-speech-bubble::after {
+  border-top-color: #fefce8;
+}
+
+.candidate-red .candidate-speech-bubble {
+  background: #fee2e2;
+  border: 1px solid #fee2e2;
+}
+
+.candidate-red .candidate-speech-bubble::after {
+  border-top-color: #fef2f2;
+}
+
+/* Speech-Bubble Ausrichtung für äussere Kandidaten - verhindert Überlauf am Rand */
+/* Nur für DebateScreen und nur beim Sprechen (nicht beim Denken) */
+
+/* Erster Kandidat: Bubble leicht nach rechts verschieben */
+.debate-stage .candidate-card.speaking:first-child .candidate-speech-bubble,
+.active-debate-stage .candidate-card.speaking:first-child .candidate-speech-bubble {
+  left: 70%;
+  transform: translateX(-35%);
+}
+
+.debate-stage .candidate-card.speaking:first-child .candidate-speech-bubble::after,
+.active-debate-stage .candidate-card.speaking:first-child .candidate-speech-bubble::after {
+  left: 35%;
+  transform: translateX(0);
+}
+
+/* Letzter Kandidat: Bubble leicht nach links verschieben */
+.debate-stage .candidate-card.speaking:last-child .candidate-speech-bubble,
+.active-debate-stage .candidate-card.speaking:last-child .candidate-speech-bubble {
+  left: 30%;
+  transform: translateX(-65%);
+}
+
+.debate-stage .candidate-card.speaking:last-child .candidate-speech-bubble::after,
+.active-debate-stage .candidate-card.speaking:last-child .candidate-speech-bubble::after {
+  left: 75%;
+  transform: translateX(0);
+}
+
+/* Mittlerer Kandidat bleibt zentriert */
+.debate-stage .candidate-card.speaking:not(:first-child):not(:last-child) .candidate-speech-bubble,
+.active-debate-stage .candidate-card.speaking:not(:first-child):not(:last-child) .candidate-speech-bubble {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.candidate-robot {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Active speaker has scale transform instead of size change */
+.candidate-robot.has-mic {
+  transform: scale(1.3);
+}
+
+.candidate-blue .candidate-robot {
+  background: #dbeafe;
+}
+
+.candidate-gray .candidate-robot {
+  background: #e5e7eb;
+}
+
+.candidate-green .candidate-robot {
+  background: #dcfce7;
+}
+
+.candidate-yellow .candidate-robot {
+  background: #fef9c3;
+}
+
+.candidate-red .candidate-robot {
+  background: #fee2e2;
+}
+
+/* Active speaker border - based on color */
+.candidate-blue .candidate-robot.has-mic {
+  border: 2px solid #3b82f6;
+}
+
+.candidate-gray .candidate-robot.has-mic {
+  border: 2px solid #9ca3af;
+}
+
+.candidate-green .candidate-robot.has-mic {
+  border: 2px solid #22c55e;
+}
+
+.candidate-yellow .candidate-robot.has-mic {
+  border: 2px solid #eab308;
+}
+
+.candidate-red .candidate-robot.has-mic {
+  border: 2px solid #ef4444;
+}
+
+.robot-icon {
+  font-size: 40px;
+}
+
+.robot-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.robot-video.visible {
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
+}
+
+.robot-video.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.robot-image {
+  width: 100%;
+  max-width: 100px;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mic-icon {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 16px;
+  background: white;
+  border-radius: 50%;
+  padding: 2px;
+  border: 2px solid #9ca3af;
+}
+
+/* Mic icon border color based on avatar color */
+.candidate-blue .mic-icon {
+  border-color: #3b82f6;
+}
+
+.candidate-gray .mic-icon {
+  border-color: #9ca3af;
+}
+
+.candidate-green .mic-icon {
+  border-color: #22c55e;
+}
+
+.candidate-yellow .mic-icon {
+  border-color: #eab308;
+}
+
+.candidate-red .mic-icon {
+  border-color: #ef4444;
+}
+
+.candidate-podium {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+/* Modern flat podium design */
+.podium-modern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.podium-modern-top {
+  width: 70px;
+  height: 45px;
+  background: #4a4a4a;
+  border-radius: 4px 4px 0 0;
+  border: 2px solid #333;
+  border-bottom: none;
+}
+
+.podium-modern-stand {
+  width: 10px;
+  height: 45px;
+  background: #333;
+}
+
+.podium-modern-base {
+  width: 65px;
+  height: 10px;
+  background: #4a4a4a;
+  border-radius: 2px;
+  border: 2px solid #333;
+}
+
+/* ========== ACTIVE DEBATE SCREEN ========== */
+.active-debate-screen {
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.active-debate-screen .top-exit-row {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timer-display-right {
+  font-size: 18px;
+  font-weight: 600;
+  color: #22c55e;
+  border: 2px solid #22c55e;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.active-debate-stage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.active-stage-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+}
+
+.active-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.side-title-large {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.active-candidates-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%
+}
+
+.vertical-divider {
+  width: 2px;
+  background-color: #333;
+  min-height: 300px;
+  align-self: stretch;
+}
+
+/* User Section */
+.active-user-section {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 40px 20px;
+  margin-top: auto;
+}
+
+.user-podium-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-podium {
+  width: 120px;
+  height: 120px;
+  border: 3px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.mic-icon-large {
+  font-size: 60px;
+}
+
+.your-turn-prompt {
+  flex: 1;
+}
+
+.your-turn-text {
+  font-size: 28px;
+  font-weight: 600;
+  color: #5b21b6;
+}
+
+/* ========== ACTIVE DEBATE INPUT STYLES ========== */
+.active-input-footer {
+  background: #fcf9ff;
+  padding: 24px;
+  border-radius: 16px;
+  border: 2px solid #5b21b6;
+  /*box-shadow: 0 20px 50px rgba(91,33,182,0.25);*/
+  margin-top: 20px;
+  position: relative;
+  z-index: 60;
+}
+
+.participation-prompt {
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.participation-prompt .prompt-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #5b21b6;
+}
+
+.participation-prompt.urgent {
+  background: linear-gradient(135deg, #eef5ff, #e0ecff);
+  border: 2px solid #93c5fd;
+  animation: pulse-urgent 1.5s ease-out 1;
+}
+
+.participation-prompt .urgent-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+@keyframes pulse-urgent {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.15);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.12);
+  }
+}
+
+.active-input-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.user-mic-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.active-text-input {
+  flex: 1;
+  padding: 16px 20px !important;
+  font-size: 18px !important;
+  border: 2px solid #5b21b6 !important;
+  border-radius: 12px !important;
+  background: #fff;
+}
+
+.active-text-input:focus {
+  outline: none;
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.active-send-btn {
+  padding: 12px 24px !important;
+  font-size: 18px !important;
+  font-weight: 600;
+  background: #d1d5db !important;
+  color: #9ca3af !important;
+  border-radius: 12px !important;
+  cursor: not-allowed;
+}
+
+.active-send-btn:hover {
+  background: #d1d5db !important;
+}
+
+.active-send-btn.active {
+  background: #5b21b6 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
+.active-send-btn.active:hover {
+  background: #7c3aed !important;
+}
+
+/* ========== START DEBATE MODAL ========== */
+.start-debate-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.175);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.start-debate-modal {
+  background: #F6F7FB;
+  border-radius: 1.5rem;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease;
+  max-width: 24rem;
+  width: 90vw;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message Sent Feedback */
+.message-sent-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  animation: fadeInScale 0.4s ease;
+}
+
+.message-sent-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.message-sent-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-icon {
+  font-size: 2.25rem;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0.75rem 0 0.75rem 0;
+}
+
+.modal-text {
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0 0 2rem 0;
+  line-height: 1.5;
+}
+
+.start-debate-btn {
+  background: #785fc2;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-debate-btn:hover {
+  background: #5e35b1;
+  transform: translateY(-1px);
+}
+
+.start-debate-btn:active {
+  transform: translateY(0);
+}
+
+/* Urgent Prompt Overlay - Your Turn */
+.urgent-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 40%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 70%, transparent 100%);
+  z-index: 50;
+  animation: fadeIn 0.3s ease;
+  pointer-events: none;
+}
+
+/* Stage minimiert wenn User Input gefragt ist */
+.debate-stage.stage-minimized {
+  transform: scale(0.65);
+  transform-origin: center top;
+  opacity: 0.7;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  margin-bottom: -150px;
+}
+
+/* Stage leicht minimiert für ActiveDebateScreen (weniger stark) */
+.active-debate-stage.stage-minimized-light {
+  transform: scale(0.85);
+  transform-origin: center top;
+  transition: transform 0.4s ease, margin 0.4s ease;
+  margin-bottom: -40px;
+}
+
+/* Footer und Button nach oben wenn Prompt aktiv */
+.active-debate-screen.prompt-active .footer-end-row,
+.active-debate-screen.prompt-active .debate-input-footer {
+  transition: transform 0.4s ease;
+  transform: translateY(-30px);
+}
+
+/* Leichteres Overlay für Urgent Prompt während Debatte */
+.urgent-prompt-overlay-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(196, 198, 200, 0.0);
+  z-index: 50;
+  animation: fadeIn 0.3s ease;
+  pointer-events: none;
+}
+
+/* Topic Intro Layout mit Bild rechts */
+.topic-intro-content {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.topic-intro-text {
+  max-width: 600px;
+  width: 100%;
+  flex: 1;
+}
+
+.topic-intro-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topic-intro-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .topic-intro-content {
+    flex-direction: column;
+  }
+  
+  .topic-intro-image {
+    order: -1;
+  }
+}
+
+/* ========== EXIT WARNING MODAL ========== */
+.exit-warning-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.exit-warning-modal {
+  background: #F6F7FB;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease;
+  max-width: 20rem;
+  width: 70vw;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.exit-modal-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  height: 48px;
+}
+
+.exit-cancel-btn {
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exit-cancel-btn:hover {
+  background: #d1d5db;
+}
+
+.exit-confirm-btn {
+  background: #D32F2F;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.exit-confirm-btn:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* ========== SKIP BUTTON ========== */
+.skip-btn {
+  background: transparent;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skip-btn:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+  color: #374151;
+}
+
+.action-row{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ========== SKIP ICON BUTTON (next to Continue) ========== */
+.skip-icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 2px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  flex-shrink: 0;
+  position: absolute;
+  right: calc(50% - 140px);
+  transform: translateX(100%);
+}
+
+.skip-icon-btn:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* Placeholder für Skip-Button um Verschiebung zu verhindern */
+.skip-icon-placeholder {
+  position: absolute;
+  width: 32px;
+  visibility: hidden;
+  right: calc(50% - 140px);
+  transform: translateX(100%);
+}
+
+/* ========== SCREEN WRAPPER WITH OUTSIDE EXIT ========== */
+.screen-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 32px auto;
+}
+
+.exit-btn-outside {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+  padding-right: 8px;
+}
+
+.time-bar {
+  width: 100%;
+  height: 10px;
+  background: #f2f2f2;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 16px 0 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.time-bar-fill {
+  width: 95%;
+  height: 60%;
+  background:  #ff4d50f6;
+  border-radius: 999px;
+}

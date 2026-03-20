@@ -1,0 +1,213 @@
+{
+  "debate_id": "arena_healthcare_premiums_opening_then_dialogue",
+  "language": "de",
+  "source": "Arena SRF 07.10.2016 – Prämienschock",
+  "roles": {
+    "SYSTEM": {
+      "label": "System",
+      "description": "Neutraler Ein- und Ausstieg ohne Moderation"
+    },
+    "A": {
+      "label": "Kosten & Versicherer-Perspektive",
+      "orientation": "kostenkritisch, steuerungsorientiert",
+      "description": "- Steigende Prämien sind Folge von explodierender Kosten von immer mehr Behandlungen.\n- Es braucht Steuerungsmöglichkeiten  für Krankenkassen.\n- Ziel: Prämien senken durch Kostenkontrolle."
+    },
+    "B": {
+      "label": "Solidarität & soziale Perspektive",
+      "orientation": "links/grün, sozialpolitisch",
+      "description": "- Prämien sind für viele Familien kaum mehr tragbar.\n- Lösung liegt in Solidarität, gezielter Entlastungen und fairer Verteilung von Kosten. Nicht im Abbau von Leistungen"
+    },
+    "C": {
+      "label": "Medizinische Fachperspektive",
+      "orientation": "ärztlich, spitalnah",
+      "description": "- Das System ist widersprüchlich: Hervorragende Medizin, aber oft zu viel davon.\n- Es gibt unnötige Untersuchungen und Eingriffe, die weder Patienten noch dem System nützen. "
+    },
+    "D": {
+      "label": "Ökonomische Systemperspektive",
+      "orientation": "gesundheitsökonomisch",
+      "description": "- Keine aussergewöhnlich hohen Gesundheitskosten.\n- Es braucht kein pauschales Sparen, sondern gezielte Eingriffe bei Überversorgungen und Ineffizienzen"
+    },
+    "E": { 
+      "label": "Betroffene Bevölkerung", 
+      "side": "UNDECIDED", 
+      "description": "- Finanzielle Belastung. Seit Jahren sind Krankenkassenprämien stärker gestiegen als Löhne.\n- Erwartungen an Effizienz und Transparenz im System." 
+    }
+  },
+    "Topic Introduction": [
+    {
+      "id": 1,
+      "speaker": "SYSTEM",
+      "text": "Die Krankenkassenprämien steigen nächstes Jahr im Schnitt um 4,5 Prozent. Seit Einführung der obligatorischen Krankenversicherung sind sie deutlich stärker gestiegen als Löhne oder Teuerung. Viele Haushalte geraten dadurch unter Druck. Die Frage lautet: Wie krank ist unser Gesundheitssystem – und wo muss angesetzt werden?"
+    }],
+  "Arguments Intro": [
+    {
+      "id": 1,
+      "speaker": "A",
+      "text": "Für mich ist klar: Die steigenden Krankenkassenprämien sind kein Zufall, sondern die direkte Folge explodierender Kosten. Diese Kosten entstehen durch immer mehr Behandlungen, unabhängig davon, ob sie notwendig sind oder nicht. Solange Krankenkassen jede Leistung bezahlen müssen, wird sich an dieser Entwicklung nichts ändern. Wenn man die Prämien also senken will, muss man bei den Kosten ansetzen."
+    },
+    {
+      "id": 2,
+      "speaker": "B",
+      "text": "Ich sehe vor allem ein Gerechtigkeitsproblem. Für viele Bürger und Bürgerinnen aus dem Mittelstand werden die Prämien zunehmend zur Belastung, während sehr hohe Einkommen vergleichsweise wenig spüren. Dadurch entsteht der Eindruck, dass die Lasten im System ungleich verteilt sind. Für mich ist daher klar: Das Hauptproblem ist die unfaire Verteilung der Kosten."
+    },
+    {
+      "id": 3,
+      "speaker": "C",
+      "text": "Aus medizinischer Sicht ist das System widersprüchlich. Wir haben eine sehr gute medizinische Versorgung, aber wir machen oft zu viel Medizin. Es gibt unnötige Untersuchungen, die weder den Patienten noch dem System nützen. Es fehlt aber an Anreizen für Qualität der Untersuchungen und Zurückhaltung der Patienten. Wir sollten uns stärker am Nutzen und an der Qualität orientieren."
+    },
+    {
+      "id": 4,
+      "speaker": "D",
+      "text": "Aus ökonomischer Sicht ist das Gesundheitssystem nicht ausser Kontrolle. Für ein reiches Land sind die Gesundheitskosten nicht aussergewöhnlich. Die zentralen Probleme liegen meiner Meinung nach bei den Fehlanreizen und ineffizienten Strukturen. Es braucht kein pauschales Sparen, sondern gezielte Eingriffe dort, wo Überversorgung und Doppelspurigkeiten entstehen."
+    },
+    {
+      "id": 5,
+      "speaker": "E",
+      "text": "Die Prämien steigen seit Jahren stärker als die Löhne, und für viele Haushalte wird das zur echten Belastung. Ich zahle meine Krankenkassenprämien jeden Monat und habe das Gefühl, dass sie immer höher werden, ohne dass ich mehr Leistungen davon habe. Dadurch habe ich das Gefühl, dass das System ineffizient ist und die Verantwortung unklar verteilt. Ich erwarte nicht weniger Medizin, aber einen nachvollziehbareren Umgang mit meinem Geld."
+    }],
+
+
+  "debate_script": [
+    {
+      "id": 1,
+      "speaker": "A",
+      "text": "Die Prämien sind die Folge der Kosten. Und die Kosten sind die Folge der Behandlungen. Je mehr Behandlungen anfallen, notwendige wie unnötige, desto höher steigen die Kosten und damit auch die Prämien."
+    },
+    {
+      "id": 2,
+      "speaker": "B",
+      "text": "So kann es tatsächlich nicht mehr weitergehen. Für viele Bürger und Bürgerinnen ist diese Prämienlast kaum mehr tragbar. Gleichzeitig muss man festhalten: Die Prämien sind stärker gestiegen als die eigentlichen Gesundheitskosten.",
+      "reactions": [{"from": "E", "emoji": "👏🏼"}]
+    },
+    {
+      "id": 3,
+      "speaker": "D",
+      "text": "Ökonomisch betrachtet ist das System nicht ausser Kontrolle. Der Anteil der Gesundheitskosten am Bruttoinlandprodukt liegt seit Jahren stabil bei rund zehn Prozent – ähnlich wie in vergleichbaren Ländern.",
+      "reactions": [{"from": "B", "emoji": "🤨"}]
+    },
+
+    {
+      "id": 4,
+      "speaker": "A",
+      "text": "Trotzdem müssen wir handeln. Wenn rund 20 Prozent der Leistungen unnötig oder unwirtschaftlich sind, sprechen wir von sechs bis acht Milliarden Franken Sparpotenzial pro Jahr."
+    },
+    {
+      "id": 5,
+      "speaker": "C",
+      "text": "Das stimmt. Es gibt Operationen, die nicht nötig wären. Und es gibt Patienten, die so lange von Arzt zu Arzt gehen, bis jemand den Eingriff durchführt.",
+      "reactions": [{"from": "A", "emoji": "🙂‍↕️"}]
+    },
+    {
+      "id": 6,
+      "speaker": "B",
+      "text": "Den Grundleistungskatalog zu kürzen kann hier aber keine Lösung sein. Das würde bedeuten, dass sich nur noch jene eine umfassende medizinische Versorgung leisten können, die Zusatzversicherungen bezahlen können. Das würde zu einer Zweiklassenmedizin führen. Statt also Grundleistungen zu streichen, müssen wir sicherstellen, dass notwendige Behandlungen gezielt und sinnvoll eingesetzt werden.",
+      "reactions": [{"from": "C", "emoji": "👍🏼"}]
+    },
+    {
+      "id": 7,
+      "speaker": "D",
+      "text": "Genau. Nicht welche Leistungen es gibt, ist das Hauptproblem, sondern für wen sie eingesetzt werden. Es braucht eine gezieltere Steuerung der Leistungen.",
+      "reactions": [{"from": "B", "emoji": "👍🏼"}]
+    },
+
+    {
+      "id": 8,
+      "speaker": "E",
+      "text": "Wenn tatsächlich ein relevanter Teil der Leistungen unnötig ist, dann stellt sich für mich die Frage, warum das System das nicht früher erkennt. Ich zahle solidarisch mit, aber ich erwarte schon, dass mit diesen Beiträgen sorgfältig umgegangen wird."
+    },
+
+    {
+      "id": 9,
+      "speaker": "A",
+      "text": "Das Kernproblem ist der Vertragszwang. Krankenkassen müssen jede verordnete Leistung bezahlen, egal ob sie sinnvoll ist oder nicht. Das treibt die Kosten massiv.",
+      "reactions": [{ "emoji": "👍🏼", "from": "D" },
+        { "emoji": "🤨", "from": "E" }]
+    },
+    {
+      "id": 10,
+      "speaker": "C",
+      "text": "Zusätzlich fehlt ein Qualitätsanreiz. Ein Spital, das effizient arbeitet, wird gleich entschädigt wie eines, das Patienten länger behält oder unnötige Untersuchungen macht."
+    },
+    {
+      "id": 11,
+      "speaker": "B",
+      "text": "Darum braucht es staatliche Steuerung. Der Markt allein funktioniert hier nicht, weil Patienten medizinische Qualität auch kaum beurteilen können."
+    },
+
+    {
+      "id": 12,
+      "speaker": "D",
+      "text": "Medizinische Qualität wird längst gemessen, aber sie hat kaum Konsequenzen. Spitäler mit schlechten Resultaten werden genauso behandelt wie solche mit guten. Das reduziert jegliche Anreize, die Qualität und Effizienz tatsächlich zu verbessern.",
+      "reactions": [{"from": "C", "emoji": "👍🏼"}]
+    },
+
+    {
+      "id": 13,
+      "speaker": "B",
+      "text": "Auch der Ausstattungswettbewerb zwischen Kantonen und Spitälern, also das jeder Kanton ''mithalten'' will und die Spitäler attraktiv wirken möchten, treibt langfristig die Kosten, ohne echten Mehrwert für die Patienten.",
+      "reactions": [{"from": "E", "emoji": "😯"}]
+    },
+
+    {
+      "id": 14,
+      "speaker": "E",
+      "text": "Genau das ist der Punkt auch, an dem für viele das Vertrauen in das System schwindet. Viele haben kein Problem mit Solidarität. Aber Solidarität funktioniert nur, wenn man sieht, dass Qualität und Verantwortung auch eine Rolle spielen. Wenn Fehlanreize toleriert werden, fragt man sich, wofür man eigentlich solidarisch bezahlt.",
+      "reactions": [{"from": "B", "emoji": "👏🏼"}, {"from": "A", "emoji": "😤"}]
+    },
+
+    {
+      "id": 15,
+      "speaker": "A",
+      "text": "Man kann die Schuld aber nicht nur bei den Insitutionen suchen. Es landen rund 80 Prozent der Notfälle im Spital, die dort eignetlich gar nicht hingehören. Auch das verursacht enorme Kosten und auch hier braucht es mehr Eigenverantwortung."
+    },
+    {
+      "id": 16,
+      "speaker": "C",
+      "text": "Das ist oft kein böser Wille. Viele Menschen wissen nicht, wohin sie sich wenden sollen. Also gehen sie ins Spital.",
+      "reactions": [{"from": "B", "emoji": "🤨"}]
+    },
+    {
+      "id": 17,
+      "speaker": "B",
+      "text": "Darum muss die Grundversorgung gestärkt werden: Hausärzte, Gemeinschaftspraxen und bessere Information. Der/Die aufgeklärte Patient:in entscheidet oft vernünftiger.",
+      "reactions": [{"from": "A", "emoji": "👍🏼"}]
+    },
+
+    {
+      "id": 18,
+      "speaker": "E",
+      "text": "Genau, was mich hier stört, ist nicht, dass andere mehr Leistungen beziehen, sondern dass Qualität und Effizienz offenbar kaum eine Rolle spielen. Das Gefühl, dass gutes Verhalten nicht belohnt wird, untergräbt die Akzeptanz."
+    },
+
+    {
+      "id": 19,
+      "speaker": "A",
+      "text": "Wir können uns also darauf einigen, dass das Ziel nicht weniger Medizin ist, sondern weniger unnötige Medizin – und mehr Verantwortung auf allen Ebenen.",
+      "reactions": [{"from": "E", "emoji": "👏🏼"}, {"from": "B", "emoji": "👍🏼"}]
+    },
+    {
+      "id": 20,
+      "speaker": "C",
+      "text": "Beides lässt sich verbinden: Solidarität erhalten und unnötige Medizin vermeiden. Dafür braucht es Mut zur Qualität und Transparenz.",
+      "reactions": [{"from": "A", "emoji": "👍🏼"}]
+    },
+    {
+      "id": 21,
+      "speaker": "D",
+      "text": "Am Ende geht es um intelligente Steuerung statt, hart ausgedrückt, blindes Wachstum. Weder Stillstand noch Radikalkürzungen führen zum Ziel.",
+      "reactions": [{"from": "C", "emoji": "🙂‍↕️"}]
+    },
+    {
+      "id": 22,
+      "speaker": "E",
+      "text": "Für mich liegt der Schlüssel in Transparenz und Verantwortung. Die Bürger und Bürgerinnen möchten verstehen, wofür sie bezahlen. Auch möchte man sehen, dass unnötige Kosten reduziert werden, ohne dass der Zugang zur Medizin eingeschränkt wird."
+    }
+  ],   
+  "summary"   : [
+    {
+      "id": 12,
+      "speaker": "SYSTEM",
+      "text": "Die Debatte zeigt: Steigende Krankenkassenprämien entstehen durch Mengenausweitung, Fehlanreize und ungleiche Kostenverteilung. Während einige stärkere Kostensteuerung fordern, betonen andere Solidarität, Qualität und bessere Information. Klar ist: Einfache Lösungen gibt es nicht – Reformen müssen Kosten, Qualität und Verantwortung gemeinsam berücksichtigen."
+    }
+  ]
+}
